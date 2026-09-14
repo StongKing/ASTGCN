@@ -1,0 +1,43 @@
+{
+  "dataset": "Divvy 2017 July V7 station-only ASTGCN baseline",
+  "source": "D:\\physic_predict_bike\\divvy_2017_physics_closed_active_v7_10min_from_v64\\closed_system_v7_10min_arrays.npz",
+  "node0_included": false,
+  "dynamic_graph_included": false,
+  "num_real_stations": 567,
+  "num_model_nodes": 567,
+  "state_boundaries": 4465,
+  "grid_minutes": 10,
+  "input_steps": 6,
+  "prediction_steps": 6,
+  "alignment_trim": 11,
+  "num_samples": 4454,
+  "train_samples": 2672,
+  "val_samples": 891,
+  "test_samples": 891,
+  "channels": [
+    "inventory",
+    "time_of_day",
+    "day_of_week"
+  ],
+  "time_of_day_encoding": "(hour*60+minute)/1440",
+  "day_of_week_encoding": "(weekday+1)/7",
+  "static_graph": {
+    "type": "undirected geographic KNN",
+    "k": 8,
+    "undirected_edges": 2657,
+    "connected_components": 1,
+    "edge_cost": "Haversine distance in metres",
+    "uses_trip_flow": false,
+    "future_topology_leakage": false
+  },
+  "normalization": "X only; mean/std estimated from training X only; Y kept in bike-count units",
+  "physics_note": "No constant station-fleet constraint is valid after removing node 0, because bikes in transit are absent from the station-only state.",
+  "outputs": {
+    "raw_signal": "D:\\physic_predict_bike\\data\\DIVVY_without_0\\DIVVY_without_0.npz",
+    "prepared_samples": "D:\\physic_predict_bike\\data\\DIVVY_without_0\\DIVVY_without_0_r1_d0_w0_astcgn.npz",
+    "static_edges": "D:\\physic_predict_bike\\data\\DIVVY_without_0\\DIVVY_without_0.csv",
+    "static_adjacency": "D:\\physic_predict_bike\\data\\DIVVY_without_0\\static_adjacency_without_0.npz",
+    "node_mapping": "D:\\physic_predict_bike\\data\\DIVVY_without_0\\node_mapping_without_0.csv",
+    "sample_index": "D:\\physic_predict_bike\\data\\DIVVY_without_0\\sample_index_without_0.csv"
+  }
+}
